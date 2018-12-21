@@ -1,0 +1,2 @@
+#!/bin/sh
+LILYPOND_DATADIR=__path__ exec lilypond "$@"
