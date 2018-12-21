@@ -3,13 +3,13 @@
 
 Name:           gonville-fonts
 Version:        20141025
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Gonville, a font of symbols for typesetting music
 
 License:        Public Domain
 # Note that the source is MIT; only its output is PD.
-URL:            http://www.chiark.greenend.org.uk/~sgtatham/gonville/
-Source0:        http://www.chiark.greenend.org.uk/~sgtatham/gonville/%{fontname}-%{gonville_version}-src.tar.gz
+URL:            https://www.chiark.greenend.org.uk/~sgtatham/gonville/
+Source0:        https://www.chiark.greenend.org.uk/~sgtatham/gonville/%{fontname}-%{gonville_version}-src.tar.gz
 
 BuildArch:      noarch
 BuildRequires:  fontpackages-devel
@@ -54,5 +54,7 @@ cp -pr lilyfonts/{otf,svg} %{buildroot}%{_fontdir}
 %license LICENCE
 
 %changelog
+* Fri Dec 21 2018 Peter Simonyi <pts@petersimonyi.ca> - 20141025.177659a-2
+- Update URLs to HTTPS, now that upstream supports it
 * Tue Jan 26 2016 Peter Simonyi <pts@petersimonyi.ca> - 20141025.177659a
 - Initial packaging
