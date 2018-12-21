@@ -3,7 +3,7 @@
 
 Name:           gonville-fonts
 Version:        20141025
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Gonville, a font of symbols for typesetting music
 
 License:        Public Domain
@@ -13,7 +13,9 @@ Source0:        https://www.chiark.greenend.org.uk/~sgtatham/gonville/%{fontname
 
 BuildArch:      noarch
 BuildRequires:  fontpackages-devel
-BuildRequires:  python, fontforge, ghostscript-core
+BuildRequires:  python2, python-unversioned-command
+BuildRequires:  fontforge, ghostscript-core
+BuildRequires:  potrace
 Requires:       fontpackages-filesystem
 
 # The fonts include files labelled "Emmentaler" as well as the "Gonville" ones
@@ -54,7 +56,8 @@ cp -pr lilyfonts/{otf,svg} %{buildroot}%{_fontdir}
 %license LICENCE
 
 %changelog
-* Fri Dec 21 2018 Peter Simonyi <pts@petersimonyi.ca> - 20141025.177659a-2
+* Fri Dec 21 2018 Peter Simonyi <pts@petersimonyi.ca> - 20141025.177659a-3
 - Update URLs to HTTPS, now that upstream supports it
+- Fix build requirements
 * Tue Jan 26 2016 Peter Simonyi <pts@petersimonyi.ca> - 20141025.177659a
 - Initial packaging
