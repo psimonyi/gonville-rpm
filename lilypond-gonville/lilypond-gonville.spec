@@ -1,4 +1,4 @@
-%global ly_version 2.19.82
+%global ly_version 2.19.83
 %global lygdata %{_datadir}/%{name}/%{ly_version}
 
 Name:           lilypond-gonville
