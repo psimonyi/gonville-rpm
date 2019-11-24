@@ -3,17 +3,18 @@
 
 Name:           gonville-fonts
 Version:        20141025
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Gonville, a font of symbols for typesetting music
 
 License:        Public Domain
 # Note that the source is MIT; only its output is PD.
 URL:            https://www.chiark.greenend.org.uk/~sgtatham/gonville/
 Source0:        https://www.chiark.greenend.org.uk/~sgtatham/gonville/%{fontname}-%{gonville_version}-src.tar.gz
+Patch0:         python2.patch
 
 BuildArch:      noarch
 BuildRequires:  fontpackages-devel
-BuildRequires:  python2, python-unversioned-command
+BuildRequires:  python2
 BuildRequires:  fontforge, ghostscript-core
 BuildRequires:  potrace
 Requires:       fontpackages-filesystem
@@ -37,6 +38,7 @@ note (which is also unused in modern music).
 
 %prep
 %setup -q -n %{fontname}-%{gonville_version}
+%patch0 -p1
 
 %build
 # Unfortunately, the upstream buildscript is written in a custom language 'bob'
@@ -56,6 +58,8 @@ cp -pr lilyfonts/{otf,svg} %{buildroot}%{_fontdir}
 %license LICENCE
 
 %changelog
+* Sun Nov 24 2019 Peter Simonyi <pts@petersimonyi.ca> - 20141025.177659a-4
+- Fix Python 2 build dep
 * Fri Dec 21 2018 Peter Simonyi <pts@petersimonyi.ca> - 20141025.177659a-3
 - Update URLs to HTTPS, now that upstream supports it
 - Fix build requirements

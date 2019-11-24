@@ -1,0 +1,10 @@
+diff --git a/glyphs.py b/glyphs.py
+index ea1781a..4c54f1e 100755
+--- a/glyphs.py
++++ b/glyphs.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python2
+ 
+ import sys
+ import os
